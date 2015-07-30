@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-*",
+  "description": "TestHarness-dnx Console Application",
+  "authors": [ "ducas.francis" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "kafka-net": "1.0.0-*"
+  },
+
+  "commands": {
+    "TestHarness": "TestHarness"
+  },
+
+  "frameworks": {
+    "dnx45": { },
+    "dnx451": { },
+    }
+  }
+}

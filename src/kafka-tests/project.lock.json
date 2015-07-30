@@ -1,0 +1,302 @@
+{
+  "locked": false,
+  "version": 1,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "kafka-net/1.0.0": {
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/kafka-net.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/kafka-net.dll": {}
+        }
+      },
+      "moq/4.0.10827": {
+        "compile": {
+          "lib/NET40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/Moq.dll": {}
+        }
+      },
+      "Moq/4.0.10827": {
+        "compile": {
+          "lib/NET40/Moq.dll": {}
+        },
+        "runtime": {
+          "lib/NET40/Moq.dll": {}
+        }
+      },
+      "Ninject/3.0.1.10": {
+        "compile": {
+          "lib/net45-full/Ninject.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.dll": {}
+        }
+      },
+      "Ninject.MockingKernel/3.0.0.5": {
+        "dependencies": {
+          "Ninject": "[3.0.0.0, 3.1.0.0)"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.MockingKernel.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.MockingKernel.dll": {}
+        }
+      },
+      "Ninject.MockingKernel.Moq/3.0.0.5": {
+        "dependencies": {
+          "moq": "[4.0.0, 4.1.0)",
+          "Ninject.MockingKernel": "[3.0.0.0, 3.1.0.0)"
+        },
+        "compile": {
+          "lib/net45-full/Ninject.MockingKernel.Moq.dll": {}
+        },
+        "runtime": {
+          "lib/net45-full/Ninject.MockingKernel.Moq.dll": {}
+        }
+      },
+      "NSubstitute/1.7.2.0": {
+        "compile": {
+          "lib/NET45/NSubstitute.dll": {}
+        },
+        "runtime": {
+          "lib/NET45/NSubstitute.dll": {}
+        }
+      },
+      "NUnit/2.6.3": {
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "System.Configuration.Abstractions/2.0.2.3": {
+        "frameworkAssemblies": [
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net45/System.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Configuration.Abstractions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "kafka-net/1.0.0": {
+      "sha512": "fDU65gUrz+EDyBj16ev3Lt2Bg7nYuqYISyQw2ibN3E7OwoDtcCWIvNNmN0Ard/rfH3cY/KNlBZCCPb/WDzyAwA==",
+      "files": [
+        "kafka-net.1.0.0.nupkg",
+        "kafka-net.1.0.0.nupkg.sha512",
+        "kafka-net.nuspec",
+        "lib/dnx45/kafka-net.dll",
+        "lib/dnx45/kafka-net.xml",
+        "lib/dnx451/kafka-net.dll",
+        "lib/dnx451/kafka-net.xml",
+        "lib/dnxcore50/kafka-net.dll",
+        "lib/dnxcore50/kafka-net.xml"
+      ]
+    },
+    "moq/4.0.10827": {
+      "sha512": "MiSRqZ+Dj3mF3I/KSC9uWQZK7G4FgR6eM5/EWSVE3H/x8xu5EMsMaLeZfgGGbu0Difk2nllSsepa8F7ahl/tsg==",
+      "files": [
+        "lib/NET35/Moq.dll",
+        "lib/NET35/Moq.pdb",
+        "lib/NET35/Moq.xml",
+        "lib/NET40/Moq.dll",
+        "lib/NET40/Moq.pdb",
+        "lib/NET40/Moq.xml",
+        "lib/Silverlight4/Castle.Core.dll",
+        "lib/Silverlight4/Moq.Silverlight.dll",
+        "lib/Silverlight4/Moq.Silverlight.pdb",
+        "lib/Silverlight4/Moq.Silverlight.xml",
+        "License.txt",
+        "Moq.4.0.10827.nupkg",
+        "Moq.4.0.10827.nupkg.sha512",
+        "Moq.chm",
+        "Moq.nuspec"
+      ]
+    },
+    "Moq/4.0.10827": {
+      "sha512": "MiSRqZ+Dj3mF3I/KSC9uWQZK7G4FgR6eM5/EWSVE3H/x8xu5EMsMaLeZfgGGbu0Difk2nllSsepa8F7ahl/tsg==",
+      "files": [
+        "lib/NET35/Moq.dll",
+        "lib/NET35/Moq.pdb",
+        "lib/NET35/Moq.xml",
+        "lib/NET40/Moq.dll",
+        "lib/NET40/Moq.pdb",
+        "lib/NET40/Moq.xml",
+        "lib/Silverlight4/Castle.Core.dll",
+        "lib/Silverlight4/Moq.Silverlight.dll",
+        "lib/Silverlight4/Moq.Silverlight.pdb",
+        "lib/Silverlight4/Moq.Silverlight.xml",
+        "License.txt",
+        "Moq.4.0.10827.nupkg",
+        "Moq.4.0.10827.nupkg.sha512",
+        "Moq.chm",
+        "Moq.nuspec"
+      ]
+    },
+    "Ninject/3.0.1.10": {
+      "sha512": "BNHckK1lO8pX/yi1cToGhGWswK3fEQzAGzbx4QK7i7GKnwaZEMQD2Re4NcWOIA6tNp4qrsHUDDzgBnVKTSML6Q==",
+      "files": [
+        "lib/net35/Ninject.dll",
+        "lib/net35/Ninject.pdb",
+        "lib/net35/Ninject.xml",
+        "lib/net40/Ninject.dll",
+        "lib/net40/Ninject.pdb",
+        "lib/net40/Ninject.xml",
+        "lib/net45-full/Ninject.dll",
+        "lib/net45-full/Ninject.pdb",
+        "lib/net45-full/Ninject.xml",
+        "lib/sl2/Ninject.dll",
+        "lib/sl2/Ninject.pdb",
+        "lib/sl2/Ninject.xml",
+        "lib/sl3/Ninject.dll",
+        "lib/sl3/Ninject.pdb",
+        "lib/sl3/Ninject.xml",
+        "lib/sl3-wp/Ninject.dll",
+        "lib/sl3-wp/Ninject.pdb",
+        "lib/sl3-wp/Ninject.xml",
+        "lib/sl4/Ninject.dll",
+        "lib/sl4/Ninject.pdb",
+        "lib/sl4/Ninject.xml",
+        "lib/sl4-windowsphone71/Ninject.dll",
+        "lib/sl4-windowsphone71/Ninject.pdb",
+        "lib/sl4-windowsphone71/Ninject.xml",
+        "lib/sl5/Ninject.dll",
+        "lib/sl5/Ninject.pdb",
+        "lib/sl5/Ninject.xml",
+        "Ninject.3.0.1.10.nupkg",
+        "Ninject.3.0.1.10.nupkg.sha512",
+        "Ninject.nuspec"
+      ]
+    },
+    "Ninject.MockingKernel/3.0.0.5": {
+      "sha512": "R9aBRRThryOuI8cSJ6VsVS/VmfwtIV2CvnrAI7sg+GRKyNU9lrPMdEnggmdLlQP1ibag6smvWxNnH8K8t/knHg==",
+      "files": [
+        "lib/net35-full/Ninject.MockingKernel.dll",
+        "lib/net35-full/Ninject.MockingKernel.pdb",
+        "lib/net35-full/Ninject.MockingKernel.xml",
+        "lib/net40-full/Ninject.MockingKernel.dll",
+        "lib/net40-full/Ninject.MockingKernel.pdb",
+        "lib/net40-full/Ninject.MockingKernel.xml",
+        "lib/net45-full/Ninject.MockingKernel.dll",
+        "lib/net45-full/Ninject.MockingKernel.pdb",
+        "lib/net45-full/Ninject.MockingKernel.xml",
+        "lib/sl2/Ninject.MockingKernel.dll",
+        "lib/sl2/Ninject.MockingKernel.pdb",
+        "lib/sl2/Ninject.MockingKernel.xml",
+        "lib/sl3/Ninject.MockingKernel.dll",
+        "lib/sl3/Ninject.MockingKernel.pdb",
+        "lib/sl3/Ninject.MockingKernel.xml",
+        "lib/sl4/Ninject.MockingKernel.dll",
+        "lib/sl4/Ninject.MockingKernel.pdb",
+        "lib/sl4/Ninject.MockingKernel.xml",
+        "lib/sl5/Ninject.MockingKernel.dll",
+        "lib/sl5/Ninject.MockingKernel.pdb",
+        "lib/sl5/Ninject.MockingKernel.xml",
+        "Ninject.MockingKernel.3.0.0.5.nupkg",
+        "Ninject.MockingKernel.3.0.0.5.nupkg.sha512",
+        "Ninject.MockingKernel.nuspec"
+      ]
+    },
+    "Ninject.MockingKernel.Moq/3.0.0.5": {
+      "sha512": "/jYaut/d5IrEnJaHtQdSykspeIXRtkjeD3ZgMQZMHdiRa65lRVeks3+a5LVyPX3hUH8mG3F/ir/qFvlQPx6jfw==",
+      "files": [
+        "lib/net35-full/Ninject.MockingKernel.Moq.dll",
+        "lib/net35-full/Ninject.MockingKernel.Moq.pdb",
+        "lib/net35-full/Ninject.MockingKernel.Moq.xml",
+        "lib/net40-full/Ninject.MockingKernel.Moq.dll",
+        "lib/net40-full/Ninject.MockingKernel.Moq.pdb",
+        "lib/net40-full/Ninject.MockingKernel.Moq.xml",
+        "lib/net45-full/Ninject.MockingKernel.Moq.dll",
+        "lib/net45-full/Ninject.MockingKernel.Moq.pdb",
+        "lib/net45-full/Ninject.MockingKernel.Moq.xml",
+        "lib/sl2/Ninject.MockingKernel.Moq.dll",
+        "lib/sl2/Ninject.MockingKernel.Moq.pdb",
+        "lib/sl2/Ninject.MockingKernel.Moq.xml",
+        "lib/sl3/Ninject.MockingKernel.Moq.dll",
+        "lib/sl3/Ninject.MockingKernel.Moq.pdb",
+        "lib/sl3/Ninject.MockingKernel.Moq.xml",
+        "lib/sl4/Ninject.MockingKernel.Moq.dll",
+        "lib/sl4/Ninject.MockingKernel.Moq.pdb",
+        "lib/sl4/Ninject.MockingKernel.Moq.xml",
+        "lib/sl5/Ninject.MockingKernel.Moq.dll",
+        "lib/sl5/Ninject.MockingKernel.Moq.pdb",
+        "lib/sl5/Ninject.MockingKernel.Moq.xml",
+        "Ninject.MockingKernel.Moq.3.0.0.5.nupkg",
+        "Ninject.MockingKernel.Moq.3.0.0.5.nupkg.sha512",
+        "Ninject.MockingKernel.Moq.nuspec"
+      ]
+    },
+    "NSubstitute/1.7.2.0": {
+      "sha512": "vDAfItA5TW9c597wvDuLM74K4C2Wh7zSjxHPNeRHkb906dc0wWc6myOub24JpS8ev3kw9QswLO0lMpyxzHagnw==",
+      "files": [
+        "acknowledgements.txt",
+        "BreakingChanges.txt",
+        "CHANGELOG.txt",
+        "lib/NET35/NSubstitute.dll",
+        "lib/NET35/NSubstitute.XML",
+        "lib/NET40/NSubstitute.dll",
+        "lib/NET40/NSubstitute.XML",
+        "lib/NET45/NSubstitute.dll",
+        "lib/NET45/NSubstitute.XML",
+        "LICENSE.txt",
+        "NSubstitute.1.7.2.0.nupkg",
+        "NSubstitute.1.7.2.0.nupkg.sha512",
+        "NSubstitute.nuspec",
+        "README.txt"
+      ]
+    },
+    "NUnit/2.6.3": {
+      "sha512": "zGYW/N4U8H1Y6Xr6aGQZgaDtfpRJSlbx7A9Fg3WNUV3EKEUe1LwjnHw9NH81GVWYzKlOBLZmFp/q90YJwT2vzQ==",
+      "files": [
+        "lib/nunit.framework.dll",
+        "lib/nunit.framework.xml",
+        "license.txt",
+        "NUnit.2.6.3.nupkg",
+        "NUnit.2.6.3.nupkg.sha512",
+        "NUnit.nuspec"
+      ]
+    },
+    "System.Configuration.Abstractions/2.0.2.3": {
+      "sha512": "3oqR2TtRdiHfe/BSPRqfkkmcb621fSeS5r9TZEDE3mbel0iH7cWK2rR/TeRB+P8jwz2E8x62yY1CdhVkVJItgw==",
+      "files": [
+        "lib/net45/System.Configuration.Abstractions.dll",
+        "lib/net45/System.Configuration.Abstractions.pdb",
+        "System.Configuration.Abstractions.2.0.2.3.nupkg",
+        "System.Configuration.Abstractions.2.0.2.3.nupkg.sha512",
+        "System.Configuration.Abstractions.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "kafka-net >= 1.0.0-*",
+      "System.Configuration.Abstractions >= 2.0.2.3"
+    ],
+    "DNX,Version=v4.5.1": [
+      "Moq >= 4.0.10827",
+      "Ninject >= 3.0.1.10",
+      "Ninject.MockingKernel >= 3.0.0.5",
+      "Ninject.MockingKernel.Moq >= 3.0.0.5",
+      "NSubstitute >= 1.7.2",
+      "NUnit >= 2.6.3",
+      "fx/System.Net >= 4.0.0.0",
+      "fx/System.Net.Http >= 4.0.0.0",
+      "fx/System.Net.Http.WebRequest >= 4.0.0.0"
+    ]
+  }
+}
