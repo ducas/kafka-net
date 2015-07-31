@@ -218,7 +218,11 @@ namespace KafkaNet
         {
             if (requestItem == null) return;
             if (_requestIndex.TryAdd(requestItem.CorrelationId, requestItem) == false)
+#if !DNXCORE50
                 throw new ApplicationException("Failed to register request for async response.");
+#else
+                throw new Exception("Failed to register request for async response.");
+#endif
         }
 
         private void TriggerMessageTimeout(AsyncRequestItem asyncRequestItem)
@@ -257,7 +261,7 @@ namespace KafkaNet
             }
         }
 
-        #region Class AsyncRequestItem...
+#region Class AsyncRequestItem...
         class AsyncRequestItem : IDisposable
         {
             private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
@@ -292,7 +296,7 @@ namespace KafkaNet
                 }
             }
         }
-        #endregion
+#endregion
     }
 
 

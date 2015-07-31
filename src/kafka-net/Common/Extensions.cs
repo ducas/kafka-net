@@ -231,8 +231,12 @@ namespace KafkaNet.Common
             if (task.IsFaulted == false) return null;
             if (task.Exception != null)
                 return task.Exception.Flatten();
-            
+
+#if DNXCORE50
+            return new Exception("Unknown exception occured.");
+#else
             return new ApplicationException("Unknown exception occured.");
+#endif
         }
     }
 }

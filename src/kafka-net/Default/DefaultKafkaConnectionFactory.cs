@@ -33,12 +33,18 @@ namespace KafkaNet
         {
             try
             {
+#if !DNXCORE50
                 //lookup the IP address from the provided host name
                 var addresses = Dns.GetHostAddresses(hostname);
+#else
+                //Dns class isn't in DNX, so let's assume the hostname is an IP address
+                //TODO: Fix address assumption and look up DNS
+                var addresses = new[] { IPAddress.Parse(hostname) };
+#endif
 
                 if (addresses.Length > 0)
                 {
-                    Array.ForEach(addresses, address => log.DebugFormat("Found address {0} for {1}", address, hostname));
+                    foreach (var address in addresses) log.DebugFormat("Found address {0} for {1}", address, hostname);
 
                     var selectedAddress = addresses.FirstOrDefault(item => item.AddressFamily == AddressFamily.InterNetwork) ?? addresses.First();
 
@@ -47,7 +53,7 @@ namespace KafkaNet
                     return selectedAddress;
                 }
             }
-            catch 
+            catch
             {
                 throw new UnresolvedHostnameException("Could not resolve the following hostname: {0}", hostname);
             }

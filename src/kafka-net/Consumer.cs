@@ -33,7 +33,7 @@ namespace KafkaNet
             _options = options;
             _fetchResponseQueue = new BlockingCollection<Message>(_options.ConsumerBufferSize);
             _metadataQueries = new MetadataQueries(_options.Router);
-            
+
             SetOffsetPosition(positions);
         }
 
@@ -84,7 +84,7 @@ namespace KafkaNet
                 {
                     _options.Log.DebugFormat("Consumer: Refreshing partitions for topic: {0}", _options.Topic);
                     var topic = _options.Router.GetTopicMetadata(_options.Topic);
-                    if (topic.Count <= 0) throw new ApplicationException(string.Format("Unable to get metadata for topic:{0}.", _options.Topic));
+                    if (topic.Count <= 0) throw new Exception(string.Format("Unable to get metadata for topic:{0}.", _options.Topic));
                     _topic = topic.First();
 
                     //create one thread per partition, if they are in the white list.
@@ -139,11 +139,11 @@ namespace KafkaNet
                             var fetches = new List<Fetch> { fetch };
 
                             var fetchRequest = new FetchRequest
-                                {
-                                    MaxWaitTime = (int)Math.Min((long)int.MaxValue, _options.MaxWaitTimeForMinimumBytes.TotalMilliseconds),
-                                    MinBytes = _options.MinimumBytes,
-                                    Fetches = fetches
-                                };
+                            {
+                                MaxWaitTime = (int)Math.Min((long)int.MaxValue, _options.MaxWaitTimeForMinimumBytes.TotalMilliseconds),
+                                MinBytes = _options.MinimumBytes,
+                                Fetches = fetches
+                            };
 
                             //make request and post to queue
                             var route = _options.Router.SelectBrokerRoute(topic, partitionId);

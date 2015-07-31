@@ -1,5 +1,9 @@
 ﻿using System;
+#if DNXCORE50
+using System.Threading;
+#else
 using System.Timers;
+#endif
 
 namespace KafkaNet.Common
 {
@@ -66,6 +70,7 @@ namespace KafkaNet.Common
         IScheduledTimer End();
     }
 
+#if !DNXCORE50
     /// <summary>
     /// TODO there is a bug in this that sometimes calls the do function twice on startup
     /// Timer class which providers a fluent interface for scheduling task for threads to execute at some future point.
@@ -274,4 +279,86 @@ namespace KafkaNet.Common
             get { return _timer; }
         }
     }
+#else
+    public class ScheduledTimer : IScheduledTimer
+    {
+        private Timer _timer;
+        private readonly object _lock = new object();
+        private TimeSpan _start;
+        private TimeSpan _interval;
+        private Action _action;
+        private bool _wait;
+
+        public bool Enabled
+        {
+            get
+            {
+                lock (_lock) return _timer != null;
+            }
+        }
+
+        public ScheduledTimerStatus Status
+        {
+            get
+            {
+                return Enabled ? ScheduledTimerStatus.Running : ScheduledTimerStatus.Stopped;
+            }
+        }
+
+        public IScheduledTimer Begin()
+        {
+            lock (_lock) _timer = new Timer(TimerElapsed, null, _start, _interval);
+            return this;
+        }
+
+        private void TimerElapsed(object state)
+        {
+            var wait = _wait;
+            if (wait) { End(); }
+            _action();
+            if (wait) { Begin(); }
+        }
+
+        public void Dispose()
+        {
+            End();
+        }
+
+        public IScheduledTimer Do(Action action)
+        {
+            _action = action;
+            return this;
+        }
+
+        public IScheduledTimer DontWait()
+        {
+            _wait = false;
+            return this;
+        }
+
+        public IScheduledTimer End()
+        {
+            if (_timer == null) return this;
+            lock (_lock)
+            {
+                _timer.Dispose();
+                _timer = null;
+            }
+            return this;
+        }
+
+        public IScheduledTimer Every(TimeSpan interval)
+        {
+            _interval = interval.TotalMilliseconds > 0 ? interval : TimeSpan.FromMilliseconds(1);
+            return this;
+        }
+
+        public IScheduledTimer StartingAt(DateTime start)
+        {
+            var interval = start - DateTime.Now;
+            _start = interval.TotalMilliseconds > 0 ? interval : TimeSpan.FromMilliseconds(1);
+            return this;
+        }
+    }
+#endif
 }

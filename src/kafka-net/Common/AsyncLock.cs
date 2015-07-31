@@ -61,7 +61,9 @@ namespace KafkaNet.Common
 			if (disposing)
 			{
 				using (_semaphore) { }
-				using (_releaser) { }
+#if !DNXCORE50
+                using (_releaser) { }
+#endif
 			}
 		}
 

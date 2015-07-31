@@ -280,7 +280,11 @@ namespace KafkaNet
                     StatisticsTracker.IncrementGauge(StatisticGauge.ActiveWriteOperation);
 
                     if (OnWriteToSocketAttempt != null) OnWriteToSocketAttempt(sendTask.Payload);
+#if !DNXCORE50
                     await netStream.WriteAsync(sendTask.Payload.Buffer, 0, sendTask.Payload.Buffer.Length).ConfigureAwait(false);
+#else
+                    netStream.Write(sendTask.Payload.Buffer, 0, sendTask.Payload.Buffer.Length);
+#endif
 
                     sendTask.Tcp.TrySetResult(sendTask.Payload);
                 }
@@ -363,7 +367,9 @@ namespace KafkaNet
             using (_disposeToken)
             using (_disposeRegistration)
             using (_client)
+#if !DNXCORE50
             using (_socketTask)
+#endif
             {
                 _socketTask.SafeWait(TimeSpan.FromSeconds(30));
             }
